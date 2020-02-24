@@ -8,20 +8,17 @@ router.get("/product/all", (req, res) => {
     }else{
         res.json({
             error: '403',
-            content: 'Usuario no permitido'
+            content: 'Usuarioproduct[i] no permitido'
         });
     }
 })
 
-router.get("/product/one", (req, res) => {
+router.get("/product/one/:id", (req, res) => {
     if(req.headers.auth == 'Admin'){
-        for(var i=0; i < Object.keys(product).length - 1; i++){
-            /*if(product[i].id == req.params){
-                res.json(product[i])
-            }*/
-            
-            res.json(product[i])
-        }
+        let filtrados = product.filter((query) => {
+            return query.id == req.params.id
+            })
+        res.json(filtrados)
     }else{
         res.json({
             error: '403',
