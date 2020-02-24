@@ -42,9 +42,12 @@ router.post("/cupon", (req, res) => {
     }
 })
 
-router.get("/cupon", (req, res) => {
+router.post("/cupon/all", (req, res) => {
     if(req.headers.auth == 'Admin'){
-        res.json(cupon);
+        let filtrados = cupon.filter((query) => {
+            return query.valid_until > req.body.valid && query.valid_since < req.body.valid
+        })
+        res.json(filtrados)
     }else{
         res.json({
             error: '403',

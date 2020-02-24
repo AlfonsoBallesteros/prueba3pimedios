@@ -8,5 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/admin', require('./routes/admin'));
+app.use('/api/customer', require('./routes/customer'));
+
 
 module.exports = app;
