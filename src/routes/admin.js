@@ -30,7 +30,10 @@ router.get("/product/one/:id", (req, res) => {
 router.post("/cupon", (req, res) => {
     if(req.headers.auth == 'Admin'){
         let nuevo = cupon.push(req.body)
-        res.json(nuevo);
+        res.json({
+            ok: true,
+            content: 'cupon creado'
+        });
     }else{
         res.json({
             error: '403',
@@ -42,6 +45,20 @@ router.post("/cupon", (req, res) => {
 router.get("/cupon", (req, res) => {
     if(req.headers.auth == 'Admin'){
         res.json(cupon);
+    }else{
+        res.json({
+            error: '403',
+            content: 'Usuario no permitido'
+        });
+    }
+})
+
+router.get("/cupon/one/:id", (req, res) => {
+    if(req.headers.auth == 'Admin'){
+        let filtrados = cupon.filter((query) => {
+            return query.id == req.params.id
+            })
+        res.json(filtrados)
     }else{
         res.json({
             error: '403',
