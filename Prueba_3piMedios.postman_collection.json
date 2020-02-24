@@ -1,0 +1,699 @@
+{
+	"info": {
+		"_postman_id": "abf5700b-2379-48f0-a07d-d307d66b1d23",
+		"name": "Prueba_3piMedios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get_adminProduct_all",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Auth",
+						"value": "Admin",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/api/admin/product/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"admin",
+						"product",
+						"all"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get_adminPorduct_all",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "Admin",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/admin/product/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"admin",
+								"product",
+								"all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "115"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"73-mkSCFDK/e3ZOjx8Wcs4ItdJKrzQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 24 Feb 2020 15:39:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"nombre del producto\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"nombre del producto\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"nombre del producto\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get_adminPorduct_one",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Auth",
+						"value": "Admin",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/admin/product/one/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"admin",
+						"product",
+						"one",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get_adminPorduct_one",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "Admin",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/admin/product/one/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"admin",
+								"product",
+								"one",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-AtoiyJtuxe7zmAWMTO3gnFwL/KM\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 24 Feb 2020 16:16:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"name\": \"nombre del producto\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Post_adminCupon",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Auth",
+						"value": "Admin",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 2,\n    \"name\": \"nombre1\", \n    \"description\": \"descripcion del producto\", \n    \"product_id\": 2, \n    \"valid_since\": \"2020-02-26T00:00:00.000\", \n    \"valid_until\": \"2020-02-26T23:59:00.999\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/admin/cupon",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"admin",
+						"cupon"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Post_adminCupon",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "Admin",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 2,\n    \"name\": \"nombre del cupon\", \n    \"description\": \"descripcion del producto\", \n    \"product_id\": 2, \n    \"valid_since\": \"2020-02-25T00:00:00.000\", \n    \"valid_until\": \"2020-02-25T23:59:00.999\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/admin/cupon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"admin",
+								"cupon"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "36"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"24-suXjLJmul3VUI1fRGOv1zkYuna8\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 24 Feb 2020 16:30:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"ok\": true,\n    \"content\": \"cupon creado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get_adminCupon_all",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Auth",
+						"value": "Admin",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"valid\": \"2020-02-25T11:00:00.000\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/admin/cupon/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"admin",
+						"cupon",
+						"all"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get_adminCupon_all",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "Admin",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"valid\": \"2020-02-25T11:00:00.000\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/admin/cupon/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"admin",
+								"cupon",
+								"all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "172"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ac-LCL8j1uxAgjS71pkyRe3CG85agI\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 24 Feb 2020 17:37:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"nombre del cupon\",\n        \"description\": \"descripcion del producto\",\n        \"product_id\": 1,\n        \"valid_since\": \"2020-02-25T00:00:00.000\",\n        \"valid_until\": \"2020-02-25T23:59:00.999\"\n    }\n]"
+				},
+				{
+					"name": "Get_adminCupon_all",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "Admin",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/admin/cupon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"admin",
+								"cupon"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "343"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"157-Vt2yp5c1MkbCEk6Hkv7ThpEbuCs\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 24 Feb 2020 16:29:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"nombre del cupon\",\n        \"description\": \"descripcion del producto\",\n        \"product_id\": 1,\n        \"valid_since\": \"2020-02-25T00:00:00.000\",\n        \"valid_until\": \"2020-02-25T23:59:00.999\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"nombre del cupon\",\n        \"description\": \"descripcion del producto\",\n        \"product_id\": 2,\n        \"valid_since\": \"2020-02-25T00:00:00.000\",\n        \"valid_until\": \"2020-02-25T23:59:00.999\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get_adminCupon_one",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Auth",
+						"value": "Admin",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/api/admin/cupon/one/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"admin",
+						"cupon",
+						"one",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get_adminCupon_one",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "Admin",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/admin/cupon/one/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"admin",
+								"cupon",
+								"one",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "172"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ac-1xFpzXR7w/RsSr9l7N+UR0QE9gc\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 24 Feb 2020 16:34:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 3,\n        \"name\": \"nombre del cupon\",\n        \"description\": \"descripcion del producto\",\n        \"product_id\": 3,\n        \"valid_since\": \"2020-02-25T00:00:00.000\",\n        \"valid_until\": \"2020-02-25T23:59:00.999\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Post_customerValid_cupon",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"nombre1\",\n\t\"valid\": \"2020-02-26T11:00:00.000\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/customer/cupon",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"customer",
+						"cupon"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Post_customerValid_cupon",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"nombre1\",\n\t\"valid\": \"2020-02-26T11:00:00.000\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/customer/cupon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"customer",
+								"cupon"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "163"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a3-GDtfk1+4SNdpIHE/00aaaxUH68I\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 24 Feb 2020 17:36:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"name\": \"nombre1\",\n        \"description\": \"descripcion del producto\",\n        \"product_id\": 2,\n        \"valid_since\": \"2020-02-26T00:00:00.000\",\n        \"valid_until\": \"2020-02-26T23:59:00.999\"\n    }\n]"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}
