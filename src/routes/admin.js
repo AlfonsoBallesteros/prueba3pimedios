@@ -27,6 +27,17 @@ router.get("/product/one/:id", (req, res) => {
         });
     }
 })
+router.post("/cupon", (req, res) => {
+    if(req.headers.auth == 'Admin'){
+        let nuevo = cupon.push(req.body)
+        res.json(nuevo);
+    }else{
+        res.json({
+            error: '403',
+            content: 'Usuario no permitido'
+        });
+    }
+})
 
 router.get("/cupon", (req, res) => {
     if(req.headers.auth == 'Admin'){
